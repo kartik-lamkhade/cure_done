@@ -12,5 +12,5 @@ if uploaded_file is not None:
         st.write(f"**product:** {response.json()['product']}")
         st.write(f"**amazon_link:** {response.json()['amazon_link']}")
     except Exception as e:
-        st.error("An error occurred while processing the image. Please try again.")
+        st.error("An error occurred while processing the image. Please try again./n may be api limit over")
         st.error(str(e))

@@ -13,10 +13,10 @@ def analyze_wheat_and_get_link(image):
     img = image
     # We instruct Gemini to return a clean, predictable text structure
     prompt = """
-    Analyze this wheat plant photo. 
+    Analyze this plant photo. 
     Provide a minimal, brief diagnosis of the disease (maximum 2 sentences).
-    Then, provide exactly ONE specific product or chemical control name (like 'Propiconazole Fungicide' or 'Tebuconazole') that directly cures this wheat disease.
-    
+    Then, provide exactly ONE specific product or chemical control name that directly cures this disease.
+    give product name that available mostly in Amazon
     Format your response EXACTLY like this:
     DIAGNOSIS: [Brief info here]
     PRODUCT: [Exact product name here]

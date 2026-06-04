@@ -5,10 +5,6 @@ st.title("Plant Disease Analyzer")
 st.write("Upload a photo of your plant to get a diagnosis and treatment recommendation.")
 uploaded_file = st.camera_input("Take a picture")
 if uploaded_file is not None:
-    st.image(uploaded_file, caption='Uploaded Image')
-    
-    # Here you would call your backend API to analyze the image and get the response
-    # For demonstration, we'll just show a placeholder response
     with st.spinner("Analyzing the image..."):
         response = requests.post("https://cure-done.onrender.com/analyze-wheat",files={"Upload_file": (uploaded_file.name, uploaded_file, "image/jpeg")})
     st.write(f"**diagnosis:** {response.json()['diagnosis']}")

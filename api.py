@@ -1,5 +1,4 @@
 from fastapi import FastAPI,UploadFile, File
-from scipy import io
 from PIL import Image
 import io
 from main.next import analyze_wheat_and_get_link

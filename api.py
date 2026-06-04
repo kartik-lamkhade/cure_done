@@ -1,7 +1,7 @@
 from fastapi import FastAPI,UploadFile, File
 from PIL import Image
 import io
-from main.next import analyze_wheat_and_get_link
+from next import analyze_wheat_and_get_link
 app = FastAPI()
 @app.get("/")
 def home():

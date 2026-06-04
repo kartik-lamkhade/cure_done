@@ -35,7 +35,8 @@ def analyze_wheat_and_get_link(image):
         for line in lines:
             if line.startswith("PRODUCT:"):
                 product_name = line.replace("PRODUCT:", "").strip()
-        
+        if not product_name:
+            raise HTTPException(status_code=422, detail="Could not extract product name from Gemini's response.")
         if product_name:
             # Encode the product name for a safe URL (e.g., replaces spaces with %20)
             encoded_query = urllib.parse.quote(product_name)

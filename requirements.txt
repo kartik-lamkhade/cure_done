@@ -5,3 +5,4 @@ dotenv
 scipy
 uvicorn 
 python-multipart
+openai

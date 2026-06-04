@@ -1,4 +1,5 @@
 import os
+from fastapi import HTTPException
 import urllib.parse
 import google.generativeai as genai
 from google.generativeai import types
@@ -48,7 +49,7 @@ def analyze_wheat_and_get_link(image):
             # affiliate_link = f"{amazon_link}&tag=YOUR_ASSOCIATE_TAG"
             
         else:
-            return {"error": "Could not extract product name from Gemini's response."}
+            raise HTTPException(status_code=400, detail="Could not extract product name from Gemini's response.")
             
     except Exception as e:
-        return {"error": f"Error building link: {e}"}
+        raise HTTPException(status_code=500, detail=f"Error building link: {e}")

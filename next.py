@@ -1,7 +1,7 @@
 import os
 from fastapi import HTTPException
 import urllib.parse
-import google.generativeai as genai
+import google.genai as genai
 from google.generativeai import types
 from PIL import Image
 from dotenv import load_dotenv

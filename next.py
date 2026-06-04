@@ -6,7 +6,7 @@ from PIL import Image
 from dotenv import load_dotenv
 load_dotenv()
 genai.configure(api_key=os.environ["geminiapi"])
-model = genai.GenerativeModel('gemini-2.5-flash')
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 def analyze_wheat_and_get_link(image):
     # Load your wheat plant photo

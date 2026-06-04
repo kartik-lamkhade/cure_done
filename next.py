@@ -5,10 +5,7 @@ from google.generativeai import types
 from PIL import Image
 from dotenv import load_dotenv
 load_dotenv()
-genai.configure(api_key=os.getenv('geminiapi'))
-api_key = os.getenv('geminiapi')
-# 1. Initialize the Gemini Client
-# Make sure you have set your GEMINI_API_KEY in your environment variables
+genai.configure(api_key=os.environ["geminiapi"])
 model = genai.GenerativeModel('gemini-2.5-flash')
 
 def analyze_wheat_and_get_link(image):

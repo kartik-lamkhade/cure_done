@@ -3,7 +3,7 @@ import streamlit as st
 
 st.title("Plant Disease Analyzer")
 st.write("Upload a photo of your plant to get a diagnosis and treatment recommendation.")
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png", "webp"])
+uploaded_file = st.camera_input("Take a picture")
 if uploaded_file is not None:
     st.image(uploaded_file, caption='Uploaded Image')
     

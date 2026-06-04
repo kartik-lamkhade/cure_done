@@ -1,13 +1,12 @@
 import os
 from fastapi import HTTPException
 import urllib.parse
-import google.genai as genai
-from google.generativeai import types
+from google import genai
+from google.genai import types
 from PIL import Image
 from dotenv import load_dotenv
 load_dotenv()
-genai.configure(api_key=os.environ["geminiapi"])
-model = genai.GenerativeModel('gemini-1.5-flash-latest')
+client = genai.Client(api_key=os.environ["geminiapi"])
 def analyze_wheat_and_get_link(image):
     img = image
     prompt = """
@@ -20,7 +19,8 @@ def analyze_wheat_and_get_link(image):
     PRODUCT: [Exact product name here]
     """
     
-    response = model.generate_content(
+    response = client.models.generate_content(
+        model="gemini-1.5-flash",
         contents=[img, prompt]
     )
     

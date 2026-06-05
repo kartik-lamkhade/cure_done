@@ -3,4 +3,4 @@ uvicorn
 Pillow
 python-dotenv
 python-multipart
-google-genai>=0.8.0
+google.generativeai
